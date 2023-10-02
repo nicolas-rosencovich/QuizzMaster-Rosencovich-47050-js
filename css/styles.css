@@ -176,31 +176,44 @@ text-align: center;
   /* Botones selectores */
 
   #footballButton{
-    background-color: #c5483a;
+    background-color: #40439a;
     width: 150px; 
     margin: solid white;
     border-radius: 10px;
     justify-content: space-between;
     height: 50px;
     font-size: 1rem;
+    color: white;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
       }
       #rockButton{
-        background-color: #c5483a;
+        background-color:#40439a;
     width: 150px;
     margin: solid white;
     border-radius: 10px;
     justify-content: space-between;
     height: 50px;
     font-size: 1rem;
+    color: white;
+margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
       }
       #randomButton{
-        background-color: #c5483a;
+        background-color: #40439a;
         width:  150px; 
         margin: solid white;
         border-radius: 10px;
         justify-content: space-between;
         height: 50px;
         font-size: 1rem;
+        color: white;
+        margin-bottom: 30px;
+
+        display: flex;
+        justify-content: space-around;
       }
 /* NAV DESPLEGABLE */
       #offcanvasNavbarLabel{
