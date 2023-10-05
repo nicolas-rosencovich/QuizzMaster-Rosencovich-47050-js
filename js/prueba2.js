@@ -1,17 +1,40 @@
-let currentQuestion = 0;
+
+let currentQuestion ;
 let score = 0;
 let lives = 7; // Set the initial number of lives to 3
 let currentQuestions;
 
+//Empezar preguntas random
+const randomButton = document.querySelector("#randomButton")
+ randomButton.addEventListener("click", () => {
+  startGame('random')
+ })
 
+//Empezar preguntas rock
+const rockButton = document.querySelector("#rockButton");
+rockButton.addEventListener("click",() => {
+  startGame('rock')
+})
 
+//Empezar con las preguntas de futbol
+const footballButton = document.querySelector("#footballButton");
+footballButton.addEventListener("click", () => {
+  startFootballGame('futbol')
+})
 
+//Empezar con las preguntas de programacion
+const programacionButton = document.querySelector("#programacionButton");
+programacionButton.addEventListener("click", () => {
+  startGame('programacion')
+})
 
 
 function showResults() {
     const gameContainer = document.getElementById("gameContainer");
     const livesContainer = document.getElementById("livesContainer");
-  
+   
+
+    //Prueba de sacar
     if (lives > 0) {
       gameContainer.innerHTML = `<h1>¡Juego completado!</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
     } else {
@@ -34,7 +57,8 @@ function startGame(section) {
         currentQuestions = randomQuestions;
     } else if (section === "rock") {
         currentQuestions = rockArgentinoQuestions;
-    }
+    } else if (section === "programacion") {
+      currentQuestions == programacionQuestions;}
 
 
 
@@ -48,10 +72,10 @@ function startGame(section) {
 }
 
 
-function displayQuestion() {
+ function displayQuestion() {
     const questionText = document.getElementById("questionText");
-    questionText.textContent = currentQuestions[currentQuestion].text;
-
+ questionText.textContent = currentQuestions[currentQuestion].text; 
+ 
     const answerButtons = document.querySelectorAll(".answer");
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].textContent = currentQuestions[currentQuestion].answers[i];
@@ -215,78 +239,78 @@ const randomQuestions = [
     //Agrego preguntas de teoría musical
     {
         text: "¿Cuál es la clave más comúnmente utilizada en la notación musical?",
-        options: ["Clave de Sol", "Clave de Fa", "Clave de Do", "Clave de Si"],
+        answers: ["Clave de Sol", "Clave de Fa", "Clave de Do", "Clave de Si"],
         correctAnswer: "Clave de Sol",
       },
 
       {
         text: "¿Cuántos tiempos tiene una negra en un compás de 4/4?",
-        options: ["1", "2", "3", "4"],
+        answers: ["1", "2", "3", "4"],
         correctAnswer: "1"
       },
       {
         text: "¿Qué término musical se utiliza para indicar que una nota debe tocarse más suavemente?",
-        options: ["Staccato", "Legato", "Mezzo piano", "Pianissimo"],
+        answers: ["Staccato", "Legato", "Mezzo piano", "Pianissimo"],
         correctAnswer: "Pianissimo"
       },
       {
         text: "¿Cuál es el nombre de la nota que se encuentra dos semitonos por encima de un Do?",
-        options: ["Re", "Mi", "Fa", "Sol"],
+        answers: ["Re", "Mi", "Fa", "Sol"],
         correctAnswer: "Re"
       },
       {
         text: "¿Cuál es la relación entre las notas en una escala menor armónica?",
-        options: ["Dos tonos enteros y un semitono", "Un tono entero y un semitono", "Dos semitonos", "Un tono y medio"],
+        answers: ["Dos tonos enteros y un semitono", "Un tono entero y un semitono", "Dos semitonos", "Un tono y medio"],
         correctAnswer: "Dos tonos enteros y un semitono"
       },
       {
         text: "¿Cuál es el nombre del silencio que representa una pausa larga en la música?",
-        options: ["Silencio de blanca", "Silencio de negra", "Silencio de corchea", "Silencio de semicorchea"],
+        answers: ["Silencio de blanca", "Silencio de negra", "Silencio de corchea", "Silencio de semicorchea"],
         correctAnswer: "Silencio de blanca"
       },
       {
         text: "¿Cuál es el término que se utiliza para cambiar la altura de una nota musical en un semitono?",
-        options: ["Acorde", "Sostenido", "Bemol", "Intervalo"],
+        answers: ["Acorde", "Sostenido", "Bemol", "Intervalo"],
         correctAnswer: "Sostenido"
       },
       {
         text: "¿Qué sección de una orquesta se encarga de tocar instrumentos de viento madera como el clarinete y el fagot?",
-        options: ["Cuerdas", "Viento metal", "Percusión", "Viento madera"],
+        answers: ["Cuerdas", "Viento metal", "Percusión", "Viento madera"],
         correctAnswer: "Viento madera"
       },
       {
         text: "¿Cuál es el nombre del signo que se coloca al principio de una partitura para indicar el número de tiempos en un compás?",
-        options: ["Compás", "Barra de compás", "Indicador de compás", "Clave de compás"],
+        answers: ["Compás", "Barra de compás", "Indicador de compás", "Clave de compás"],
         correctAnswer: "Indicador de compás"
       },
       {
         text: "¿Qué intervalo se forma entre las notas Do y Mi en una escala mayor?",
-        options: ["Tercera menor", "Cuarta justa", "Sexta mayor", "Quinta justa"],
+        answers: ["Tercera menor", "Cuarta justa", "Sexta mayor", "Quinta justa"],
         correctAnswer: "Tercera menor"
       },
       {
         text: "¿Cuál es el término utilizado para indicar un cambio gradual en el volumen de la música?",
-        options: ["Crescendo", "Decrescendo", "Ritardando", "Staccato"],
+        answers: ["Crescendo", "Decrescendo", "Ritardando", "Staccato"],
         correctAnswer: "Crescendo"
       },
       {
         text: "¿Qué sección de una orquesta se encarga de tocar instrumentos de percusión como tambores y platillos?",
-        options: ["Cuerdas", "Viento metal", "Percusión", "Viento madera"],
+        answers: ["Cuerdas", "Viento metal", "Percusión", "Viento madera"],
         correctAnswer: "Percusión"
       },
       {
         text: "¿Cuál es el nombre de la técnica vocal en la que el cantante pasa rápidamente de una nota a otra?",
-        options: ["Vibrato", "Glissando", "Legato", "Falsetto"],
+        answers: ["Vibrato", "Glissando", "Legato", "Falsetto"],
         correctAnswer: "Glissando"
       },
       {
         text: "¿Cuál es el término que se utiliza para la progresión de acordes que termina en un acorde final estable?",
-        options: ["Dominante", "Subdominante", "Tónica", "Modulación"],
+        answers: ["Dominante", "Subdominante", "Tónica", "Modulación"],
         correctAnswer: "Tónica"
       },
       {
         text: "¿Cuál es el nombre de la notación que se utiliza para indicar que una nota debe tocarse más fuerte?",
-        options: ["Staccato", "Legato", "Mezzo forte", "Fortissimo"],
+        answers: ["Staccato", "Legato", "Mezzo forte", "Fortissimo"],
         correctAnswer: "Fortissimo"
       }
 
@@ -585,13 +609,23 @@ const randomQuestions = [
     currentQuestions = footballQuestions;
     startGame();
   }
- 
+ //nuevas preguntas
+ /*  function startProgramacionGame() {
+    currentQuestions = programacionQuestions;
+    startGame('startProgramacionGame');
+  } */
+
   function startGame(section) {
     if (section === "random") {
       currentQuestions = randomQuestions;
     } else if (section === "rock") {
       currentQuestions = rockArgentinoQuestions;
+    }else if(section==="programacion"){
+      currentQuestions = programacionQuestions;
     }
+
+    
+
   //Puse uno 
     currentQuestion = 1;
     score = 0;
@@ -604,16 +638,12 @@ const randomQuestions = [
     displayQuestion();
   }
   
-  function displayQuestion() {
-    const questionText = document.getElementById("questionText");
-    questionText.textContent = currentQuestions[currentQuestion].text;
   
     const answerButtons = document.querySelectorAll(".answer");
     for (let i = 0; i < answerButtons.length; i++) {
       answerButtons[i].textContent = currentQuestions[currentQuestion].answers[i];
     }
-  }
-  
+
  function checkAnswer(answer) {
   const answerButtons = document.querySelectorAll(".answer");
   const correctAnswerIndex = currentQuestions[currentQuestion].answers.indexOf(currentQuestions[currentQuestion].correctAnswer);
@@ -663,7 +693,7 @@ const randomQuestions = [
   // Al cargar la página, oculta la sección de juego
 /*   document.getElementById("gameContainer").style.display ="none"; */
 
-  //PROBANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+  
   
 function checkAnswer(answer) {
     const answerButtons = document.querySelectorAll(".answer");
@@ -780,7 +810,7 @@ function showResults(){if(lives>0){
 
 }else{
   const gameContainer = document.getElementById("gameContainer");
-  gameContainer.innerHTML = `<h1>¡No tienes mas vidas   <i class='fa-solid fa-heart-crack fa-beat' style='color: #a0b5eb;'></i> !</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
+  gameContainer.innerHTML = `<h1>¡No tienes mas vidas   <i class='fa-solid fa-heart-crack fa-beat' style='color: #a0b5eb;'></i> !</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p> `;
 }}
 
 
