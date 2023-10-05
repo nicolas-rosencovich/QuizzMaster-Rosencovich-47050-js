@@ -7,7 +7,7 @@ button.addEventListener("click", function(e){
    e.preventDefault()
    const datos = {
     username: userName.value,
-    password: password.value
+    password: password.value,
    }
    console.log(datos)
 })

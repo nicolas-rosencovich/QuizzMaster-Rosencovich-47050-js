@@ -1,17 +1,55 @@
-let currentQuestion = 0;
+
+let currentQuestion ;
 let score = 0;
 let lives = 7; // Set the initial number of lives to 3
 let currentQuestions;
 
 
 
+//Empezar preguntas random
+const randomButton = document.querySelector("#randomButton")
+ randomButton.addEventListener("click", () => {
+  startGame('random')
+ })
+
+//Empezar preguntas rock
+const rockButton = document.querySelector("#rockButton");
+rockButton.addEventListener("click",() => {
+  startGame('rock')
+})
+
+//Empezar con las preguntas de futbol
+const footballButton = document.querySelector("#footballButton");
+footballButton.addEventListener("click", () => {
+  startFootballGame('futbol')
+})
+
+//Empezar con las preguntas de programacion
+const programacionButton = document.querySelector("#programacionButton");
+programacionButton.addEventListener("click", () => {
+  startGame('programacion')
+})
+
+const cocinaButton =document.querySelector("#cocinaButton");
+cocinaButton.addEventListener("click", () => {
+  startGame('cocina')
+})
 
 
+/* //Hacer los botones de resupuesta (CONSULTAR CON TUTOR)
+
+let answerBtn = document.querySelectorAll(".answer");
+answerBtn.addEventListener("click",() => {
+  checkAnswer(this.textContent)
+}
+) */
 
 function showResults() {
     const gameContainer = document.getElementById("gameContainer");
     const livesContainer = document.getElementById("livesContainer");
-  
+   
+
+    //Prueba de sacar
     if (lives > 0) {
       gameContainer.innerHTML = `<h1>¡Juego completado!</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
     } else {
@@ -34,7 +72,8 @@ function startGame(section) {
         currentQuestions = randomQuestions;
     } else if (section === "rock") {
         currentQuestions = rockArgentinoQuestions;
-    }
+    } else if (section === "programacion") {
+      currentQuestions == programacionQuestions;}
 
 
 
@@ -48,10 +87,10 @@ function startGame(section) {
 }
 
 
-function displayQuestion() {
+ function displayQuestion() {
     const questionText = document.getElementById("questionText");
-    questionText.textContent = currentQuestions[currentQuestion].text;
-
+ questionText.textContent = currentQuestions[currentQuestion].text; 
+ 
     const answerButtons = document.querySelectorAll(".answer");
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].textContent = currentQuestions[currentQuestion].answers[i];
@@ -215,78 +254,78 @@ const randomQuestions = [
     //Agrego preguntas de teoría musical
     {
         text: "¿Cuál es la clave más comúnmente utilizada en la notación musical?",
-        options: ["Clave de Sol", "Clave de Fa", "Clave de Do", "Clave de Si"],
+        answers: ["Clave de Sol", "Clave de Fa", "Clave de Do", "Clave de Si"],
         correctAnswer: "Clave de Sol",
       },
 
       {
         text: "¿Cuántos tiempos tiene una negra en un compás de 4/4?",
-        options: ["1", "2", "3", "4"],
+        answers: ["1", "2", "3", "4"],
         correctAnswer: "1"
       },
       {
         text: "¿Qué término musical se utiliza para indicar que una nota debe tocarse más suavemente?",
-        options: ["Staccato", "Legato", "Mezzo piano", "Pianissimo"],
+        answers: ["Staccato", "Legato", "Mezzo piano", "Pianissimo"],
         correctAnswer: "Pianissimo"
       },
       {
         text: "¿Cuál es el nombre de la nota que se encuentra dos semitonos por encima de un Do?",
-        options: ["Re", "Mi", "Fa", "Sol"],
+        answers: ["Re", "Mi", "Fa", "Sol"],
         correctAnswer: "Re"
       },
       {
         text: "¿Cuál es la relación entre las notas en una escala menor armónica?",
-        options: ["Dos tonos enteros y un semitono", "Un tono entero y un semitono", "Dos semitonos", "Un tono y medio"],
+        answers: ["Dos tonos enteros y un semitono", "Un tono entero y un semitono", "Dos semitonos", "Un tono y medio"],
         correctAnswer: "Dos tonos enteros y un semitono"
       },
       {
         text: "¿Cuál es el nombre del silencio que representa una pausa larga en la música?",
-        options: ["Silencio de blanca", "Silencio de negra", "Silencio de corchea", "Silencio de semicorchea"],
+        answers: ["Silencio de blanca", "Silencio de negra", "Silencio de corchea", "Silencio de semicorchea"],
         correctAnswer: "Silencio de blanca"
       },
       {
         text: "¿Cuál es el término que se utiliza para cambiar la altura de una nota musical en un semitono?",
-        options: ["Acorde", "Sostenido", "Bemol", "Intervalo"],
+        answers: ["Acorde", "Sostenido", "Bemol", "Intervalo"],
         correctAnswer: "Sostenido"
       },
       {
         text: "¿Qué sección de una orquesta se encarga de tocar instrumentos de viento madera como el clarinete y el fagot?",
-        options: ["Cuerdas", "Viento metal", "Percusión", "Viento madera"],
+        answers: ["Cuerdas", "Viento metal", "Percusión", "Viento madera"],
         correctAnswer: "Viento madera"
       },
       {
         text: "¿Cuál es el nombre del signo que se coloca al principio de una partitura para indicar el número de tiempos en un compás?",
-        options: ["Compás", "Barra de compás", "Indicador de compás", "Clave de compás"],
+        answers: ["Compás", "Barra de compás", "Indicador de compás", "Clave de compás"],
         correctAnswer: "Indicador de compás"
       },
       {
         text: "¿Qué intervalo se forma entre las notas Do y Mi en una escala mayor?",
-        options: ["Tercera menor", "Cuarta justa", "Sexta mayor", "Quinta justa"],
-        correctAnswer: "Tercera menor"
+        answers: ["Tercera mayor", "Cuarta justa", "Sexta mayor", "Quinta justa"],
+        correctAnswer: "Tercera mayor"
       },
       {
         text: "¿Cuál es el término utilizado para indicar un cambio gradual en el volumen de la música?",
-        options: ["Crescendo", "Decrescendo", "Ritardando", "Staccato"],
+        answers: ["Crescendo", "Decrescendo", "Ritardando", "Staccato"],
         correctAnswer: "Crescendo"
       },
       {
         text: "¿Qué sección de una orquesta se encarga de tocar instrumentos de percusión como tambores y platillos?",
-        options: ["Cuerdas", "Viento metal", "Percusión", "Viento madera"],
+        answers: ["Cuerdas", "Viento metal", "Percusión", "Viento madera"],
         correctAnswer: "Percusión"
       },
       {
         text: "¿Cuál es el nombre de la técnica vocal en la que el cantante pasa rápidamente de una nota a otra?",
-        options: ["Vibrato", "Glissando", "Legato", "Falsetto"],
+        answers: ["Vibrato", "Glissando", "Legato", "Falsetto"],
         correctAnswer: "Glissando"
       },
       {
         text: "¿Cuál es el término que se utiliza para la progresión de acordes que termina en un acorde final estable?",
-        options: ["Dominante", "Subdominante", "Tónica", "Modulación"],
+        answers: ["Dominante", "Subdominante", "Tónica", "Modulación"],
         correctAnswer: "Tónica"
       },
       {
         text: "¿Cuál es el nombre de la notación que se utiliza para indicar que una nota debe tocarse más fuerte?",
-        options: ["Staccato", "Legato", "Mezzo forte", "Fortissimo"],
+        answers: ["Staccato", "Legato", "Mezzo forte", "Fortissimo"],
         correctAnswer: "Fortissimo"
       }
 
@@ -294,19 +333,157 @@ const randomQuestions = [
   ];
 
 
+  //Agrego preguntas de cocina
+
+  const cocinaQuestions = [
+    {
+      text: "¿Cuál es el ingrediente principal de la salsa pesto?",
+      answers: ["Albahaca", "Perejil", "Tomate", "Aceitunas"],
+      correctAnswer:"Albahaca"
+    },
+
+    {
+      text: "¿Cuál es la técnica de cocción en la que se sumerge un alimento en agua hirviendo y luego en agua helada para detener la cocción?",
+      answers: ["Blanquear", "Asar", "Freír", "Hornear"],
+      correctAnswer:"Blanquear"
+    },
+    
+    {
+      text: "¿Cuál es el ingrediente principal en una paella española?",
+      answers: ["Pollo", "Camarones", "Arroz", "Pasta"],
+      correctAnswer: "Arroz"
+    },
+    {
+      text: "¿Qué tipo de carne se usa comúnmente en las hamburguesas?",
+      answers: ["Pavo", "Res", "Pescado", "Pollo"],
+      correctAnswer: "Res"
+    },
+    {
+      text: "¿Cuál de los siguientes no es un tipo de queso italiano?",
+      answers: ["Cheddar", "Parmesano", "Mozzarella", "Gorgonzola"],
+      correctAnswer: "Cheddar"
+    },
+
+
+    {
+      text: "¿Cuál es la base del guacamole?",
+      answers: ["Tomate", "Aguacate", "Pimiento", "Cebolla"],
+      correctAnswer: "Aguacate"
+    },
+    {
+      text: "¿Qué tipo de pasta se utiliza tradicionalmente en la receta de lasaña?",
+      answers: ["Fideos de huevo", "Spaghetti", "Tallarines", "Rigatoni"],
+      correctAnswer: "Fideos de huevo"
+    },
+    {
+      text: "¿Qué tipo de vino se usa tradicionalmente para cocinar en la receta de coq au vin?",
+      answers: ["Chardonnay", "Merlot", "Pinot Noir", "Cabernet Sauvignon"],
+      correctAnswer: "Pinot Noir"
+    },
+    {
+      text: "¿Cuál de las siguientes no es una especia comúnmente utilizada en la comida mexicana?",
+      answers: ["Comino", "Canela", "Cilantro", "Pimentón"],
+      correctAnswer: "Canela"
+    },
+    {
+      text: "¿Cuál es el ingrediente principal en un plato de sushi?",
+      answers: ["Pescado crudo", "Tofu", "Pollo a la parrilla", "Hamburguesa"],
+      correctAnswer: "Pescado crudo"
+    },
+    {
+      text: "¿Cuál es el ingrediente principal en la salsa alfredo?",
+      answers: ["Tomate", "Crema", "Mostaza", "Salsa de soja"],
+      correctAnswer: "Crema"
+    },
+    {
+      text: "¿Qué plato es típico de la cocina japonesa y consta de bolitas de arroz cubiertas de pescado crudo?",
+      answers: ["Ramen", "Sushi", "Taco", "Curry"],
+      correctAnswer: "Sushi"
+    } ,
+    {
+      text: "¿Cuál es el ingrediente principal en una tortilla española?",
+      answers: ["Lechuga", "Patatas", "Pollo", "Maíz"],
+      correctAnswer: "Patatas"
+    },
+    {
+      text: "¿Qué tipo de pan se utiliza comúnmente para hacer un sándwich BLT?",
+      answers: ["Pan integral", "Pan de centeno", "Pan de ajo", "Pan de molde"],
+      correctAnswer: "Pan de molde"
+    },
+    {
+      text: "¿Cuál es el ingrediente principal en la pizza margarita?",
+      answers: ["Pepperoni", "Queso cheddar", "Tomate", "Jamón"],
+      correctAnswer: "Tomate"
+    },
+    {
+      text: "¿Qué tipo de carne se utiliza en la preparación de un filete mignon?",
+      answers: ["Ternera", "Cordero", "Pavo", "Cerdo"],
+      correctAnswer: "Ternera"
+    },
+    {
+      text: "¿Qué bebida alcohólica se utiliza tradicionalmente en la receta de un mojito?",
+      answers: ["Vodka", "Tequila", "Ron", "Ginebra"],
+      correctAnswer: "Ron"
+    } ,
+    {
+      text: "¿Cuál es la base de la receta de un gazpacho?",
+      answers: ["Pollo", "Lechuga", "Tomate", "Pescado"],
+      correctAnswer: "Tomate"
+    } ,
+    {
+      text: "¿Qué tipo de pescado es comúnmente utilizado en el ceviche?",
+      answers: ["Salmón", "Bacalao", "Atún", "Corvina"],
+      correctAnswer: "Corvina"
+    },
+    {
+      text: "¿Cuál de las siguientes salsas es una salsa picante mexicana hecha con chiles secos?",
+      answers: ["Salsa de tomate", "Salsa de soja", "Salsa de mostaza", "Salsa roja"],
+      correctAnswer: "Salsa roja"
+    } ,
+    {
+      text: "¿Qué postre es conocido por su textura esponjosa y se hace con huevos, azúcar y harina?",
+      answers: ["Tiramisú", "Brownie", "Soufflé", "Mousse"],
+      correctAnswer: "Soufflé"
+    },
+    {
+      text: "¿Cuál es el ingrediente principal en una ensalada César?",
+      answers: ["Lechuga iceberg", "Espárragos", "Coles de Bruselas", "Cangrejo"],
+      correctAnswer: "Lechuga iceberg"
+    },
+    {
+      text: "¿Cuál es el plato nacional de España, que consiste en arroz amarillo con azafrán y varios ingredientes?",
+      answers: ["Sushi", "Curry", "Paella", "Ratatouille"],
+      correctAnswer: "Paella"
+    },
+    {
+      text: "¿Cuál es el nombre del pan plano tradicional de la India?",
+      answers: ["Naan", "Baguette", "Ciabatta", "Pan de centeno"],
+      correctAnswer: "Naan"
+    },
+    
+
+
+
+  ]
+
+
+
+
+
+
   //Agrego más tipos de preguntas -    -------------- ------------------------------------------ 
 //Preguntas de programación (Las primeras son de js)
   const programacionQuestions=[
     {
         text:"¿Cuál de los siguientes lenguajes de programación es conocido por su uso en desarrollo web?",
-        answer:["Java", "C++", "Python ","JavaScript"],
+        answers:["Java", "C++", "Python ","JavaScript"],
         correctAnswer: "JavaScript"
     },
 
     {
          
             text: "¿Qué método se utiliza para agregar un elemento al final de un array en JavaScript?",
-            options: ["push()", "add()", "insert()", "append()"],
+            answers: ["push()", "add()", "insert()", "append()"],
             correctAnswer: "push()"
           
     },
@@ -314,13 +491,13 @@ const randomQuestions = [
 
     {
         text: "¿Cuál de las siguientes no es una palabra reservada en JavaScript?",
-        options: ["if", "function", "array", "let"],
+        answers: ["if", "function", "array", "let"],
         correctAnswer: "array"
     },
 
     {
  text: "¿Cuál es la forma correcta de comentar un solo línea en JavaScript?",
-  options: [
+ answers: [
     "// Este es un comentario",
     "'Este es un comentario'",
     "# Este es un comentario",
@@ -331,17 +508,17 @@ const randomQuestions = [
 
     {
         text: "¿Cuál es el operador de igualdad estricta en JavaScript?",
-        options: ["==", "===", "=", "!="],
+        answers: ["==", "===", "=", "!="],
         correctAnswer: "==="
       },
       {
         text: "¿Qué método se utiliza para eliminar el último elemento de un array en JavaScript?",
-        options: ["pop()", "remove()", "delete()", "splice()"],
+        answers: ["pop()", "remove()", "delete()", "splice()"],
         correctAnswer: "pop()"
       },
       {
         text: "¿Cuál es la función de la sentencia 'switch' en JavaScript?",
-        options: [
+        answers: [
           "Declarar una función",
           "Definir una clase",
           "Realizar una selección múltiple basada en el valor de una expresión",
@@ -351,83 +528,83 @@ const randomQuestions = [
       },
       {
         text: "¿Qué palabra clave se utiliza para declarar una variable que no puede ser reasignada en JavaScript?",
-        options: ["let", "var", "const", "non-reassign"],
+        answers: ["let", "var", "const", "non-reassign"],
         correctAnswer: "const"
       },
       {
         text: "¿Cuál es el resultado de '2' + '2' en JavaScript?",
-        options: ["4", "22", "Error", "NaN"],
+        answers: ["4", "22", "Error", "NaN"],
         correctAnswer: "22"
       },
       {
         text: "¿Cuál es el operador lógico 'Y' en JavaScript?",
-        options: ["&&", "||", "!", "&"],
+        answers: ["&&", "||", "!", "&"],
         correctAnswer: "&&"
       },
       {
         text: "¿Cuál es el valor de 'true && false' en JavaScript?",
-        options: ["true", "false", "Error", "undefined"],
+        answers: ["true", "false", "Error", "undefined"],
         correctAnswer: "false"
       },
       {
         text: "¿Cómo se llama la función que se ejecuta después de un tiempo específico en JavaScript?",
-        options: ["waitTimeout()", "setInterval()", "sleep()", "setTimeout()"],
+        answers: ["waitTimeout()", "setInterval()", "sleep()", "setTimeout()"],
         correctAnswer: "setTimeout()"
       },
       {
         text: "¿Cuál es el resultado de '5' == 5 en JavaScript?",
-        options: ["true", "false", "Error", "undefined"],
+        answers: ["true", "false", "Error", "undefined"],
         correctAnswer: "true"
       },
 
       {
         text: "¿Cuál es el operador de asignación en JavaScript?",
-        options: ["=", "==", "===", ":="],
+        answers: ["=", "==", "===", ":="],
         correctAnswer: "="
       },
       {
         text: "¿Cómo se declara una variable global en JavaScript?",
-        options: ["var", "let", "const", "global"],
+        answers: ["var", "let", "const", "global"],
         correctAnswer: "var"
       },
       {
         text: "¿Cuál es el resultado de 5 + '5' en JavaScript?",
-        options: ["10", "55", "Error", "NaN"],
+        answers: ["10", "55", "Error", "NaN"],
         correctAnswer: "55"
       },
       {
         text: "¿Cuál es la función utilizada para obtener la longitud de una cadena en JavaScript?",
-        options: ["len()", "length()", "count()", "size()"],
+        answers: ["len()", "length()", "count()", "size()"],
         correctAnswer: "length()"
       },
       {
         text: "¿Cuál es el operador de incremento en JavaScript?",
-        options: ["++", "+=", "--", "-="],
+        answers: ["++", "+=", "--", "-="],
         correctAnswer: "++"
       },
       {
         text: "¿Cuál es el resultado de 10 / 0 en JavaScript?",
-        options: ["Error", "Infinity", "0", "NaN"],
+        answers: ["Error", "Infinity", "0", "NaN"],
         correctAnswer: "Infinity"
       },
       {
         text: "¿Cuál es el método utilizado para agregar un elemento al principio de un array en JavaScript?",
-        options: ["push()", "unshift()", "append()", "addFirst()"],
+        answers: ["push()", "unshift()", "append()", "addFirst()"],
         correctAnswer: "unshift()"
       },
       {
         text: "¿Cuál es la función utilizada para redondear un número decimal al entero más cercano en JavaScript?",
-        options: ["round()", "ceil()", "floor()", "truncate()"],
+        answers: ["round()", "ceil()", "floor()", "truncate()"],
         correctAnswer: "round()"
       },
       {
         text: "¿Cuál es el operador lógico 'O' en JavaScript?",
-        options: ["&&", "||", "!", "&"],
+        answers: ["&&", "||", "!", "&"],
         correctAnswer: "||"
       },
       {
         text: "¿Cuál es el resultado de '5' === 5 en JavaScript?",
-        options: ["true", "false", "Error", "undefined"],
+        answers: ["true", "false", "Error", "undefined"],
         correctAnswer: "false"
       },
     
@@ -435,75 +612,74 @@ const randomQuestions = [
 //Acá unas de programación general
 {
     text: "¿Cuál es el propósito de una declaración 'import' en JavaScript?",
-    options: ["Definir una función", "Importar una biblioteca o módulo", "Declarar una variable", "Crear una clase"],
+    answers: ["Definir una función", "Importar una biblioteca o módulo", "Declarar una variable", "Crear una clase"],
     correctAnswer: "Importar una biblioteca o módulo"
   },
   {
     text: "¿Qué significa la sigla 'HTML' en desarrollo web?",
-    options: ["Hypertext Markup Language", "High-Level Text Markup Language", "Hyper Transfer Markup Language", "Home Tool Markup Language"],
+    answers: ["Hypertext Markup Language", "High-Level Text Markup Language", "Hyper Transfer Markup Language", "Home Tool Markup Language"],
     correctAnswer: "Hypertext Markup Language"
   },
   {
     text: "¿Qué tipo de lenguaje es Python?",
-    options: ["De alto nivel", "De bajo nivel", "Ensamblador", "Orientado a objetos"],
+    answers: ["De alto nivel", "De bajo nivel", "Ensamblador", "Orientado a objetos"],
     correctAnswer: "De alto nivel"
   },
   {
     text: "¿Qué es un bucle 'for' en programación?",
-    options: ["Una estructura condicional", "Una función para agregar elementos a un array", "Una estructura de control de flujo", "Un operador lógico"],
+    answers: ["Una estructura condicional", "Una función para agregar elementos a un array", "Una estructura de control de flujo", "Un operador lógico"],
     correctAnswer: "Una estructura de control de flujo"
   },
   {
     text: "¿Qué es un 'framework' en desarrollo de software?",
-    options: ["Un lenguaje de programación", "Una estructura de datos", "Una biblioteca de funciones predefinidas", "Un tipo de base de datos"],
+    answers: ["Un lenguaje de programación", "Una estructura de datos", "Una biblioteca de funciones predefinidas", "Un tipo de base de datos"],
     correctAnswer: "Una biblioteca de funciones predefinidas"
   },
   {
     text: "¿Cuál es el propósito de la sentencia 'else' en una estructura 'if-else'?",
-    options: ["Iniciar un bucle", "Definir una variable", "Manejar el caso contrario al 'if'", "Importar una biblioteca"],
+    answers: ["Iniciar un bucle", "Definir una variable", "Manejar el caso contrario al 'if'", "Importar una biblioteca"],
     correctAnswer: "Manejar el caso contrario al 'if'"
   },
   {
     text: "¿Cuál de los siguientes lenguajes de programación se utiliza comúnmente para desarrollo de videojuegos?",
-    options: ["Java", "Python", "C++", "HTML"],
+    answers: ["Java", "Python", "C++", "HTML"],
     correctAnswer: "C++"
   },
   {
     text: "¿Cuál es la principal ventaja de la programación orientada a objetos?",
-    options: ["Mayor eficiencia en el uso de recursos", "Mayor facilidad de lectura del código", "Reutilización de código y encapsulación de datos", "Simplificación de algoritmos"],
+    answers: ["Mayor eficiencia en el uso de recursos", "Mayor facilidad de lectura del código", "Reutilización de código y encapsulación de datos", "Simplificación de algoritmos"],
     correctAnswer: "Reutilización de código y encapsulación de datos"
   },
   {
     text: "¿Qué significa la sigla 'API' en programación?",
-    options: ["Arquitectura de Procesamiento de Información", "Asignación de Propiedades de Interfaz", "Aplicación de Procedimientos Inversos", "Interfaz de Programación de Aplicaciones"],
+    answers: ["Arquitectura de Procesamiento de Información", "Asignación de Propiedades de Interfaz", "Aplicación de Procedimientos Inversos", "Interfaz de Programación de Aplicaciones"],
     correctAnswer: "Interfaz de Programación de Aplicaciones"
   },
   {
     text: "¿Cuál de los siguientes no es un sistema de gestión de bases de datos (DBMS) ampliamente utilizado?",
-    options: ["MySQL", "MongoDB", "PostgreSQL", "Apache"],
+    answers: ["MySQL", "MongoDB", "PostgreSQL", "Apache"],
     correctAnswer: "Apache"
   },
   {
     text: "¿Qué es un 'loop infinito' en programación?",
-    options: ["Un bucle que se ejecuta una sola vez", "Un bucle que repite un conjunto de instrucciones sin fin", "Un bucle que no funciona", "Un bucle que se ejecuta al revés"],
+    answers: ["Un bucle que se ejecuta una sola vez", "Un bucle que repite un conjunto de instrucciones sin fin", "Un bucle que no funciona", "Un bucle que se ejecuta al revés"],
     correctAnswer: "Un bucle que repite un conjunto de instrucciones sin fin"
   },
   {
     text: "¿Qué es un 'callback' en JavaScript?",
-    options: ["Una función que se ejecuta al principio de un programa", "Una función que se llama después de una operación asincrónica", "Una función que transforma datos", "Una función de impresión en pantalla"],
+    answers: ["Una función que se ejecuta al principio de un programa", "Una función que se llama después de una operación asincrónica", "Una función que transforma datos", "Una función de impresión en pantalla"],
     correctAnswer: "Una función que se llama después de una operación asincrónica"
   },
   {
     text: "¿Cuál es el propósito principal de una sentencia 'try-catch' en programación?",
-    options: ["Declarar variables", "Manejar errores y excepciones", "Definir bucles", "Realizar operaciones matemáticas"],
+    answers: ["Declarar variables", "Manejar errores y excepciones", "Definir bucles", "Realizar operaciones matemáticas"],
     correctAnswer: "Manejar errores y excepciones"
   },
   {
     text: "¿Cuál de los siguientes no es un lenguaje de marcado utilizado en desarrollo web?",
-    options: ["HTML", "CSS", "JavaScript", "Python"],
+    answers: ["HTML", "CSS", "JavaScript", "Python"],
     correctAnswer: "Python"
   }
-
 
 
 
@@ -585,13 +761,25 @@ const randomQuestions = [
     currentQuestions = footballQuestions;
     startGame();
   }
- 
+
+
+  //Funcion para empezar con las distintas temáticas de preguntas
   function startGame(section) {
     if (section === "random") {
       currentQuestions = randomQuestions;
+    //para empezar con las preguntas de Rock
     } else if (section === "rock") {
       currentQuestions = rockArgentinoQuestions;
+    //para empezar con las preguntas de Programación
+    }else if(section==="programacion"){
+      currentQuestions = programacionQuestions;
+      //para empezar con las preguntas de cocina
+    }else if(section ==="cocina"){
+      currentQuestions=cocinaQuestions;
     }
+
+    
+
   //Puse uno 
     currentQuestion = 1;
     score = 0;
@@ -604,16 +792,12 @@ const randomQuestions = [
     displayQuestion();
   }
   
-  function displayQuestion() {
-    const questionText = document.getElementById("questionText");
-    questionText.textContent = currentQuestions[currentQuestion].text;
   
     const answerButtons = document.querySelectorAll(".answer");
     for (let i = 0; i < answerButtons.length; i++) {
       answerButtons[i].textContent = currentQuestions[currentQuestion].answers[i];
     }
-  }
-  
+
  function checkAnswer(answer) {
   const answerButtons = document.querySelectorAll(".answer");
   const correctAnswerIndex = currentQuestions[currentQuestion].answers.indexOf(currentQuestions[currentQuestion].correctAnswer);
@@ -663,7 +847,7 @@ const randomQuestions = [
   // Al cargar la página, oculta la sección de juego
 /*   document.getElementById("gameContainer").style.display ="none"; */
 
-  //PROBANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+  
   
 function checkAnswer(answer) {
     const answerButtons = document.querySelectorAll(".answer");
@@ -692,6 +876,7 @@ function checkAnswer(answer) {
   }
 
 
+  
 
 function checkAnswer(answer) {
     function checkAnswer(answer) {
@@ -780,7 +965,7 @@ function showResults(){if(lives>0){
 
 }else{
   const gameContainer = document.getElementById("gameContainer");
-  gameContainer.innerHTML = `<h1>¡No tienes mas vidas   <i class='fa-solid fa-heart-crack fa-beat' style='color: #a0b5eb;'></i> !</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
+  gameContainer.innerHTML = `<h1>¡No tienes mas vidas   <i class='fa-solid fa-heart-crack fa-beat' style='color: #a0b5eb;'></i> !</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p> `;
 }}
 
 
