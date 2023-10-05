@@ -83,9 +83,6 @@ form button{
 /* Principal */
 .body-principal{
     /* width: 847px; height: 100vh; */background: #a0b5eb; background: -moz-linear-gradient(left, #a0b5eb 0%, #c9f0e4 100%); background: -webkit-linear-gradient(left, #a0b5eb 0%,#c9f0e4 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, #a0b5eb 0%,#c9f0e4 100%) progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0b5eb', endColorstr='#c9f0e4',GradientType=1 );  
-
-
-   
     margin: 0;
     padding: 0;
     display: flex;
@@ -93,6 +90,11 @@ form button{
     align-items: center;
     height: 100vh;
     background-color: #000d32;
+}
+
+/* Sacamos la decoración que nos deja el link */
+.flechaIndex{
+ text-decoration: none;
 }
 
 #logo{
@@ -231,7 +233,19 @@ margin-bottom: 30px;
         justify-content: space-around;
       }
 
-
+#cocinaButton{
+  background-color: #40439a;
+  width:  150px; 
+  margin: solid white;
+  border-radius: 10px;
+  justify-content: space-between;
+  height: 50px;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+}
 
 
 
