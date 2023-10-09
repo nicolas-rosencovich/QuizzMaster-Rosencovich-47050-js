@@ -6,6 +6,8 @@ let currentQuestions;
 
 
 
+
+
 //Empezar preguntas random
 const randomButton = document.querySelector("#randomButton")
  randomButton.addEventListener("click", () => {
@@ -35,15 +37,6 @@ cocinaButton.addEventListener("click", () => {
   startGame('cocina')
 })
 
-
-/* //Hacer los botones de resupuesta (CONSULTAR CON TUTOR)
-
-let answerBtn = document.querySelectorAll(".answer");
-answerBtn.addEventListener("click",() => {
-  checkAnswer(this.textContent)
-}
-) */
-
 function showResults() {
     const gameContainer = document.getElementById("gameContainer");
     const livesContainer = document.getElementById("livesContainer");
@@ -66,6 +59,7 @@ function showResults() {
     }
     livesContainer.style.display = "block";
   }
+
 
 function startGame(section) {
     if (section === "random") {
@@ -96,6 +90,7 @@ function startGame(section) {
         answerButtons[i].textContent = currentQuestions[currentQuestion].answers[i];
     }
 }
+
 
 
 //LA parte de laas preguntas
@@ -757,6 +752,7 @@ const randomQuestions = [
     },
     // Agrega más preguntas de fútbol aquí...
   ];
+
   function startFootballGame() {
     currentQuestions = footballQuestions;
     startGame();
@@ -839,14 +835,7 @@ const randomQuestions = [
     }
   }
   
- /*  function showResults() {
-    const gameContainer = document.getElementById("gameContainer");
-    gameContainer.innerHTML = `<h1>¡Juego completado!</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
-  } */
-  
-  // Al cargar la página, oculta la sección de juego
-/*   document.getElementById("gameContainer").style.display ="none"; */
-
+ 
   
   
 function checkAnswer(answer) {
@@ -955,10 +944,7 @@ function nextQuestion() {
     }
 }
 
-/* function showResults() {
-    const gameContainer = document.getElementById("gameContainer");
-    gameContainer.innerHTML = `<h1>¡Juego completado!</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
-} */
+
 function showResults(){if(lives>0){
   const gameContainer = document.getElementById("gameContainer");
   gameContainer.innerHTML = `<h1>¡Juego completado!  <i class='fa-solid fa-award fa-bounce' style='color: #a0b5eb;></i> </h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
@@ -969,5 +955,6 @@ function showResults(){if(lives>0){
 }}
 
 
-/* // Al cargar la página, oculta la sección de juego
-document.getElementById("gameContainer").style.display = "none"; */
+
+
+
