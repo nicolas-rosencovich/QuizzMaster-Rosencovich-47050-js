@@ -1171,46 +1171,6 @@ const rockQuestions = [
     ],
     correctAnswer: "Mejorar la flexibilidad"
   },
-  {
-    text: "¿Cuál de las siguientes actividades es una forma de entrenamiento de alta intensidad que combina ejercicios aeróbicos y de fuerza?",
-    answers: [
-      "CrossFit",
-      "Tai Chi",
-      "Pilates",
-      "Tai Bo"
-    ],
-    correctAnswer: "CrossFit"
-  },
- 
-  {
-    text: "¿Cuál es una ventaja clave de la natación como forma de ejercicio?",
-    answers: [
-      "Desarrollo de la fuerza en las piernas",
-      "Impacto bajo en las articulaciones",
-      "Mejora de la resistencia cardiovascular",
-      "Mayor riesgo de lesiones"
-    ],
-    correctAnswer: "Impacto bajo en las articulaciones"
-  },
-  {
-    text: "¿Cuál es el nombre del ejercicio en el que te cuelgas de una barra horizontal y levantas el cuerpo hasta que la barbilla está por encima de la barra?",
-    answers: [
-      "Plancha lateral",
-      "Dominadas",
-      "Flexiones de brazos",
-      "Burpees"
-    ],
-    correctAnswer: "Dominadas"
-  },
-  {
-    text: "¿Cuál de los siguientes nutrientes es esencial para la recuperación muscular después del ejercicio?",
-    answers: [
-      "Vitamina C",
-      "Proteína",
-      "Fibra",
-      "Calcio"
-    ],
-    correctAnswer: "Proteína"
-  }
+
 ];
   

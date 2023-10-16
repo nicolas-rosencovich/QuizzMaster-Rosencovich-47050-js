@@ -321,11 +321,11 @@ function nextQuestion() {
 
 function showResults(){if(lives>0){
   const gameContainer = document.getElementById("gameContainer");
-  gameContainer.innerHTML = `<h1>¡Juego completado!  <i class='fa-solid fa-award fa-bounce' style='color: #a0b5eb;></i> </h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
+  gameContainer.innerHTML = `<h1>¡Juego completado!   <i class='fa-solid fa-award fa-beat' style='color: #a0b5eb;'></i> </h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p>`;
 
 }else{
   const gameContainer = document.getElementById("gameContainer");
-  gameContainer.innerHTML = `<h1>¡No tienes mas vidas   <i class='fa-solid fa-heart-crack fa-beat' style='color: #a0b5eb;'></i> !</h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p> `;
+  gameContainer.innerHTML = `<h1>¡No tienes más vidas!  <i class='fa-solid fa-heart-crack fa-beat' style='color: #a0b5eb;'></i> </h1><p>Puntaje final: ${score} / ${currentQuestions.length}</p> `;
 }}
 
 
