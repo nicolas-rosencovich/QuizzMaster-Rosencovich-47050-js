@@ -5,20 +5,44 @@ signupForm.addEventListener('submit', (e)=>{
     const name = document.querySelector('#username').value
     const email = document.querySelector('#email').value
     const password = document.querySelector('#password').value
+    
 
     const Users = JSON.parse(localStorage.getItem('users')) || []
-    const isUserRegistered = Users.find(user => user.email === email)
-    if(isUserRegistered){
-        return alert('El usuario ya esta registado!')
-    }
+   /*  const isUserRegistered = Users.find(user => user.email === user.email) */
+      
+      
+        function registro (){
+          const isUserRegistered = Users.find(user => user.email === user.email)
+
+          //Si es un usuario registrado nso manda la alerta y redirecciona a la misma pagina asi recarga
+          if( isUserRegistered){
+            alert("Ese usuario ya está en uso")
+
+            window.location.href = '../pages/login.html'
+          }
+          //Si obtiene un registro exitoso se va directo al index
+          else if (!isUserRegistered){
+            alert('Registro Exitoso!') 
+            window.location.href = '../index.html'
+          }
+        
+        }
+        registro()
+    
+      
 
     Users.push({name: name, email: email, password: password})
     localStorage.setItem('users', JSON.stringify(Users))
-    alert('Registro Exitoso!')
-    window.location.href = '../index.html'
+   
+  
+       
+ 
+ 
+
+    
 
 })
-
+                                                                                                                 
 
 
 //Login
@@ -28,23 +52,45 @@ loginForm.addEventListener('submit', (e)=>{
     const email = document.querySelector('#email').value
     const password = document.querySelector('#password').value
     
+    
+
+
     const Users = JSON.parse(localStorage.getItem('users')) || []
     const validUser = Users.find(user => user.email === email && user.password === password)
-    if(!validUser){
-        return alert('Usuario y/o contraseña incorrectos!')
+     if( validUser ){
+      return Swal.fire({
+          icon: 'success',
+          
+          title:  'Bienvenido ' ,
+          text: `${validUser.name}`,  
+          footer: `<p> <i class='fa-regular fa-heart fa-xl' style='color: #a0b5eb;' ></i>  </p>`
+        }) 
+       
+      
+    
+    
+    
+    
+    } else if (!validUser){
+ return  Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Usuario y/o constraseña incorrectos!',
+            footer: '<a href="#">Por qué tengo este problema?</a>'
+          }) 
     }
-    alert(`Bienvenido ${validUser.name}`)
-    localStorage.setItem('login_success', JSON.stringify(validUser))
-    window.location.href = '../index.html'   
+    
+     
+         
+   /* alert(`Bienvenido ${validUser.name}`)  */
+
+  localStorage.setItem('login_success', JSON.stringify(validUser))
+
+    window.location.href = '../index.html' 
 
 })
 
 
-/* 
-//Que pasa si no es correcto el login
-const user = JSON.parse(localStorage.getItem('login_success')) || false
-if(!user){
-    window.location.href = '../pages/login.html'
-}
- */
+
+
 

@@ -248,12 +248,12 @@ function checkAnswer(answer) {
       
         if (answer === currentQuestions[currentQuestion].correctAnswer) {
           score++;
-          answerButtons[correctAnswerIndex].style.backgroundColor = "#4caf50"; // Correct answer
+          answerButtons[correctAnswerIndex].style.backgroundColor = "#4caf50"; // Respuesta correcta
         } else {
-          lives--; // Deduct a life for incorrect answer
-          updateLives(); // Update the display of remaining lives
-          answerButtons[correctAnswerIndex].style.backgroundColor = "#4caf50"; // Correct answer
-          answerButtons[currentQuestions[currentQuestion].answers.indexOf(answer)].style.backgroundColor = "#f44336"; // Incorrect answer
+          lives--; 
+          updateLives(); 
+          answerButtons[correctAnswerIndex].style.backgroundColor = "#4caf50";
+          answerButtons[currentQuestions[currentQuestion].answers.indexOf(answer)].style.backgroundColor = "#f44336"; // Respuesta incorrecta
         }
       
         // Disable buttons to prevent further answers
@@ -262,7 +262,7 @@ function checkAnswer(answer) {
         });
       
         setTimeout(() => {
-          // Reset styles and proceed to the next question
+          // Reseteo y pasa a la siguiente pregunta
           answerButtons.forEach(button => {
             button.style.backgroundColor = "";
             button.disabled = false;
@@ -303,7 +303,7 @@ function updateLives() {
     livesElement.textContent = lives;
 }
 
-//LA parte de laas preguntas
+
 
 function nextQuestion() {
     currentQuestion++;

@@ -173,18 +173,14 @@ const rockQuestions = [
       answers: ["The Rolling Stones", "Led Zeppelin", "The Beatles", "The Who"],
       correctAnswer: "The Beatles",
     },
-    {
-      text: "¿Cuál de estas canciones es un éxito de la banda Queen?",
-      answers: ["Hotel California", "Bohemian Rhapsody", "Stairway to Heaven", "Imagine"],
-      correctAnswer: "Bohemian Rhapsody",
-    },
+    
     {
       text: "¿Cuál de estas bandas de rock se originó en la ciudad de Seattle y es parte del movimiento 'Grunge'?",
       answers: ["The Rolling Stones", "Nirvana", "The Who", "U2"],
       correctAnswer: "Nirvana",
     },
     {
-      text: "¿Qué icónico guitarrista de rock es conocido por su Hendrix Stratocaster y su interpretación de 'The Star-Spangled Banner' en Woodstock?",
+      text: "¿Qué icónico guitarrista de rock es conocido por su Fender Stratocaster y su interpretación de 'The Star-Spangled Banner' en Woodstock?",
       answers: ["Eric Clapton", "Jimi Hendrix", "Jimmy Page", "Angus Young"],
       correctAnswer: "Jimi Hendrix",
     },
@@ -1181,7 +1177,31 @@ const rockQuestions = [
     ],
     correctAnswer: "CrossFit"
   },
- 
+  {
+    text: "¿Cuál de las siguientes actividades es ideal para mejorar la flexibilidad?",
+    answers: ["Levantamiento de pesas", "Yoga", "Ciclismo", "Natación"],
+    correctAnswer: "Yoga"
+  },
+  {
+    text: "¿Cuál es la función principal de un cinturón de levantamiento?",
+    answers: ["Mejorar la apariencia física", "Evitar el sudor", "Proteger la columna vertebral", "Aumentar la velocidad"],
+    correctAnswer: "Proteger la columna vertebral"
+  },
+  {
+    text: "¿Cuál de los siguientes ejercicios se enfoca en el fortalecimiento de los músculos abdominales?",
+    answers: ["Sentadillas", "Press de banca", "Plancha", "Prensa de piernas"],
+    correctAnswer: "Plancha"
+  },
+  {
+    text: "¿Cuál de los siguientes ejercicios se enfoca en los músculos pectorales?",
+    answers: ["Zancadas", "Pull-ups", "Bench press", "Burpees"],
+    correctAnswer: "Bench press"
+  },
+  {
+    text: "¿Qué tipo de ejercicio implica movimientos repetitivos a alta velocidad?",
+    answers: ["Entrenamiento de fuerza", "Entrenamiento de resistencia", "Entrenamiento de intervalos de alta intensidad (HIIT)", "Yoga"],
+    correctAnswer: "Entrenamiento de intervalos de alta intensidad (HIIT)"
+  },
   {
     text: "¿Cuál es una ventaja clave de la natación como forma de ejercicio?",
     answers: [
@@ -1211,6 +1231,73 @@ const rockQuestions = [
       "Calcio"
     ],
     correctAnswer: "Proteína"
-  }
+  },
+  {
+    text: "¿Qué tipo de ejercicio implica levantar pesas con un rango completo de movimiento y control?",
+    answers: ["Powerlifting", "Bodybuilding", "Calistenia", "Estiramiento estático"],
+    correctAnswer: "Calistenia"
+  },
+  {
+    text: "¿Cuál es la mejor manera de medir el progreso en el gimnasio?",
+    answers: ["Cantidad de sudor", "Nivel de cansancio", "Aumento de peso corporal", "Registro de entrenamiento y seguimiento de los logros"],
+    correctAnswer: "Registro de entrenamiento y seguimiento de los logros"
+  },
+  {
+    text: "¿Cuál de los siguientes ejercicios es ideal para trabajar los músculos del core?",
+    answers: ["Zancadas", "Plancha", "Curl de bíceps", "Press de banca"],
+    correctAnswer: "Plancha"
+  },
+  {
+    text: "¿Cuál de las siguientes afirmaciones es verdadera acerca del calentamiento antes del ejercicio?",
+    answers: ["No es necesario calentarse", "Se debe hacer después del ejercicio", "Ayuda a reducir el riesgo de lesiones", "Solo es necesario en días fríos"],
+    correctAnswer: "Ayuda a reducir el riesgo de lesiones"
+  },
+
+  {
+    text: "¿Qué es el tiempo de descanso entre series en un entrenamiento de fuerza?",
+    answers: ["45 segundos", "2 minutos", "5 minutos", "30 minutos"],
+    correctAnswer: "2 minutos"
+  },
+  {
+    text: "¿Cuál es la recomendación general para la cantidad de ejercicio cardiovascular que se debe hacer por semana?",
+    answers: ["Ninguno", "30 minutos", "1 hora", "5 horas"],
+    correctAnswer: "1 hora"
+  },
+  {
+    text: "¿Cuál de las siguientes afirmaciones es cierta acerca de la suplementación de proteínas en la dieta?",
+    answers: ["Siempre es necesaria para los atletas", "Debería reemplazar todas las comidas", "Puede ser útil para alcanzar objetivos de proteína", "No tiene ningún beneficio en el rendimiento deportivo"],
+    correctAnswer: "Puede ser útil para alcanzar objetivos de proteína"
+  },
+  {
+    text: "¿Cuál es una técnica de levantamiento que implica levantar un peso y luego bajarlo lentamente para trabajar la resistencia muscular?",
+    answers: ["Levantamiento explosivo", "Negativas", "Levantamiento de potencia", "Isométricos"],
+    correctAnswer: "Negativas"
+  },
+  {
+    text: "¿Qué parte del cuerpo se trabaja principalmente en una máquina de remo?",
+    answers: ["Piernas", "Brazos", "Espalda", "Pecho"],
+    correctAnswer: "Espalda"
+  },
+  {
+    text: "¿Cuál es el propósito de un cinturón de levantamiento con hebilla?",
+    answers: ["Mejorar la postura", "Añadir estilo", "Proporcionar soporte lumbar", "Realzar los músculos"],
+    correctAnswer: "Proporcionar soporte lumbar"
+  },
+  {
+    text: "¿Cuál de los siguientes ejercicios es ideal para mejorar la fuerza de agarre?",
+    answers: ["Press de banca", "Flexiones de brazos", "Levantamiento de pesas olímpico", "Levantamiento de peso muerto con agarre mixto"],
+    correctAnswer: "Levantamiento de peso muerto con agarre mixto"
+  },
+  {
+    text: "¿Cuál es una estrategia eficaz para evitar el estancamiento en el progreso del entrenamiento?",
+    answers: ["Realizar los mismos ejercicios siempre", "Variar la rutina de entrenamiento", "Saltarse las sesiones de entrenamiento", "Comer más calorías"],
+    correctAnswer: "Variar la rutina de entrenamiento"
+  },
+  {
+    text: "¿Cuál es la importancia de mantener una hidratación adecuada durante el ejercicio?",
+    answers: ["Evitar la sudoración", "Mejorar la digestión", "Prevenir la fatiga y el golpe de calor", "Aumentar el rendimiento inmediatamente"],
+    correctAnswer: "Prevenir la fatiga y el golpe de calor"
+  },
 ];
   
+
