@@ -24,7 +24,7 @@ body {
   background: #a0b5eb;
   background: -moz-linear-gradient(left, #a0b5eb 0%, #c9f0e4 100%);
   background: -webkit-linear-gradient(left, #a0b5eb 0%, #c9f0e4 100%);
-  /* Chrome10-25,Safari5.1-6 */
+  
   background: linear-gradient(to right, #a0b5eb 0%, #c9f0e4 100%) progid:DXImageTransform.Microsoft.gradient(startColorstr='#a0b5eb', endColorstr='#c9f0e4', GradientType=1);
 }
 

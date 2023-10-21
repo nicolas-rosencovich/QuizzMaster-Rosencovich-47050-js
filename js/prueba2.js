@@ -1,13 +1,13 @@
 
 let currentQuestion ;
 let score = 0;
-let lives = 7; // Set the initial number of lives to 3
+let lives = 7; // Poner una cantidad de vidas iniciales 
 let currentQuestions;
 
 
 
 
-//Fijarse de corregir la línea 13(según tutor)
+
 //Empezar preguntas random
 const randomButton = document.querySelector("#randomButton")
  randomButton.addEventListener("click", () => {
@@ -87,25 +87,7 @@ function showResults() {
   }
 
 
-/*  function startGame(section) {
-    if (section === "random") {
-        currentQuestions = randomQuestions;
-    } else if (section === "rock") {
-        currentQuestions = rockArgentinoQuestions;
-    } else if (section === "programacion") {
-      currentQuestions = programacionQuestions;
-    }  else if (section === "naturaleza") {
-        currentQuestions = naturalezaQuestions;}
-      
- 
-    const optionsDiv = document.querySelector(".options");
-    const gameContainer = document.getElementById("gameContainer");
-    optionsDiv.style.display = "none";
-    gameContainer.style.display = "block";
 
-    displayQuestion();
-    updateLives(); // Agregamos esta función para mostrar las vidas iniciales
-} */
 
 
  function displayQuestion() {
@@ -150,7 +132,7 @@ function showResults() {
           else if (section === "gimnasio") {
             currentQuestions = gymQuestions;}
 
-  //Agrego uno 
+  
     currentQuestion = 1;
     score = 0;
   
@@ -256,7 +238,7 @@ function checkAnswer(answer) {
           answerButtons[currentQuestions[currentQuestion].answers.indexOf(answer)].style.backgroundColor = "#f44336"; // Respuesta incorrecta
         }
       
-        // Disable buttons to prevent further answers
+        // prevención de acciones con botón
         answerButtons.forEach(button => {
           button.disabled = true;
         });
@@ -268,7 +250,7 @@ function checkAnswer(answer) {
             button.disabled = false;
           });
           nextQuestion();
-        }, 1000); // 1 second animation duration
+        }, 1000); 
       }
       
       function updateLives() {

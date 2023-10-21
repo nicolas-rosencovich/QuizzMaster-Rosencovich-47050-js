@@ -8,26 +8,26 @@ signupForm.addEventListener('submit', (e)=>{
     
 
     const Users = JSON.parse(localStorage.getItem('users')) || []
-   /*  const isUserRegistered = Users.find(user => user.email === user.email) */
+    const isUserRegistered = Users.find(user => user.email.password === user.email.password) 
       
       
-        function registro (){
-          const isUserRegistered = Users.find(user => user.email === user.email)
+       
+       
 
           //Si es un usuario registrado nso manda la alerta y redirecciona a la misma pagina asi recarga
-          if( isUserRegistered){
+          if( !isUserRegistered){
             alert("Ese usuario ya está en uso")
 
             window.location.href = '../pages/login.html'
           }
           //Si obtiene un registro exitoso se va directo al index
-          else if (!isUserRegistered){
+          if (!isUserRegistered){
             alert('Registro Exitoso!') 
             window.location.href = '../index.html'
           }
-        
-        }
-        registro()
+         
+       
+      
     
       
 
@@ -35,12 +35,6 @@ signupForm.addEventListener('submit', (e)=>{
     localStorage.setItem('users', JSON.stringify(Users))
    
   
-       
- 
- 
-
-    
-
 })
                                                                                                                  
 
@@ -82,7 +76,7 @@ loginForm.addEventListener('submit', (e)=>{
     
      
          
-   /* alert(`Bienvenido ${validUser.name}`)  */
+   
 
   localStorage.setItem('login_success', JSON.stringify(validUser))
 
