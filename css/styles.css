@@ -443,3 +443,20 @@ div:where(.swal2-container) div:where(.swal2-popup) {
 
 
 
+/* FETCH */
+
+#infoFamosos{
+  font-size: 1rem;
+  display: block;
+  
+
+}
+
+.h1Fetch{
+  font-size: 1.5rem;
+}
+
+.imgFetch{
+  width: 100px;
+  border-radius: 10px;
+}
